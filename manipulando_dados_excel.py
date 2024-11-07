@@ -126,3 +126,16 @@ plt.ylabel("Total de vendas");
 plt.show()
 
 
+# Alterando o estilo
+plt.style.use("ggplot")
+
+
+# Selecionando apenas as vendas de 2019
+df_2019 = df[df["Ano_Venda"] == 2019]
+
+
+# Total de produtos vendidos por mês
+df_2019.groupby(df_2019["Mes_Venda"])["Qtde"].sum().plot(marker="o")
+plt.xlabel = "Mês"
+plt.ylabel = "Total de produtos vendidos"
+plt.legend();
