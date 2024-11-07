@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 
 df1 = pd.read_excel("Planilhas/Aracaju.xlsx")
@@ -88,4 +89,40 @@ vendas_marco_19 = df.loc[(df["Data"].dt.year == 2019) &(df["Data"].dt.month == 3
      
 
 print(vendas_marco_19)
+
+
+#Visualização de dados
+
+# Contando as ocorrências de 'LojaID' e exibindo
+print(df["LojaID"].value_counts(ascending=False))
+
+# Plotando o gráfico de barras
+df["LojaID"].value_counts(ascending=False).plot.bar()
+
+# Exibindo o gráfico
+plt.show()
+
+
+df["LojaID"].value_counts(ascending=False).plot.barh();
+
+plt.show()
+
+df.groupby(df["Data"].dt.year)["Receita"].sum().plot.pie();
+plt.show()
+
+
+# Total de vendas por cidade
+df["Cidade"].value_counts
+
+df["Cidade"].value_counts().plot.bar(title="Total de vendas por cidade")
+plt.xlabel("Cidade")
+plt.ylabel("Total de vendas");
+plt.show()
+
+# Alterando a cor
+df["Cidade"].value_counts().plot.bar(title="Total de vendas por cidade", color="yellow")
+plt.xlabel("Cidade")
+plt.ylabel("Total de vendas");
+plt.show()
+
 
