@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("csv/gapminder.csv")
+df = pd.read_csv("Planilhas/gapminder.csv")
 
 # Vizualizando as 5 primeiras linhas
 print(df.head(5))
